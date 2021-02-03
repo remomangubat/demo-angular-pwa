@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="container">
+      <div class="left-half">
+          <p>Hi, have a nice day!</p>
+          <div *ngIf="weather">
+              <p> Weather today in {{weather?.name}} </p>
+              <p> Feels like {{weather?.temp}}°C | {{weather?.desc}} </p>
+          </div>
+          <div *ngIf="!weather">
+              <p>Please connect to the internet</p>
+          </div>
+      </div>
+      <div class="right-half">
+          <p *ngIf="!key">KEY: Allow notification to generate a key..</p>
+          <p *ngIf="key">KEY: {{ key }}</p>
+          Notification Data: <p *ngIf="message">{{ message | async | json }}</p>
+          <button (click)='sendNotification()' class="button">
+              Trigger Notification to Server. {{ seconds }}s
+          </button>
+      </div>
+  </div>
+</div>

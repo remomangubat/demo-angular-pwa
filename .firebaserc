@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-pwa-4bcb8": {
+      "hosting": {
+        "demo-angular-pwa": [
+          "angular-pwa-4bcb8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-pwa-4bcb8"
+  }
+}
