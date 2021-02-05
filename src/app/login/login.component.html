@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-content>
+        <div class="header">
+            <img src="../assets/icons/logo-aia.png" alt="" style="max-height: 120px;">
+        </div>
+        <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+            <h2 class="left">Login</h2>
+            <div class="email-input">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput required />
+                    <mat-error *ngIf="loginForm.get('email').errors?.required">
+                        Required Email
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <span class="aLink">Forgot Password</span>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" required />
+                    <button mat-icon-button matSuffix (click)="hide = !hide"
+                        [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="loginForm.get('password').errors?.required">
+                        Required Password
+                    </mat-error>
+                </mat-form-field>
+                
+            </div>
+            <button mat-flat-button color="primary" class="btn-login-main" >Login</button>
+            <button mat-flat-button color="primary" class="btn-login" style="background: #ff504a;"><mat-icon svgIcon="google" aria-hidden="false" style="padding-bottom: 5px;"></mat-icon> Login with Google</button>
+            <button mat-flat-button color="primary" class="btn-login" style="background: #54a6f3"><mat-icon svgIcon="fb" aria-hidden="false" style="padding-bottom: 5px;"></mat-icon> Login with Facebook</button>
+        </form>
+        <button mat-flat-button class="btn-login" (click)="requestNotification()" style="margin-top: 20px;">Allow notification</button>
+        <button mat-flat-button class="btn-login" [disabled]="!showButton? 'disabled' : null" (click)="addToHomeScreen()" style="margin-top: 10px;">Add to Homescreen</button>
+    </mat-card-content>
+</mat-card>

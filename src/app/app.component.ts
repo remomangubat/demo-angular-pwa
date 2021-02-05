@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { MessagingService } from './service/messaging.service';
 import { WeatherService } from './weather-service/weather.service';
 import { WeatherInfo } from './model/weatherInfo';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +17,9 @@ export class AppComponent {
   weather: WeatherInfo;
 
   constructor(private messagingService: MessagingService,
-    private weatherService: WeatherService) { }
+    private weatherService: WeatherService, private titleService: Title) { 
+      this.titleService.setTitle("Philam AIA");
+     }
 
   sendNotification(){
     if(this.key != null){
@@ -49,6 +52,7 @@ export class AppComponent {
     this.messagingService.key$.subscribe(data =>  {
       this.key = data;
     });
-
+  
   }
+  
 }

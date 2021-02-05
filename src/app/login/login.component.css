@@ -1,0 +1,70 @@
+mat-card{
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(70, 70, 70);
+    background-color: rgb(245, 245, 245);
+
+}
+
+::ng-deep .mat-card{
+    border: none!important;
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.150)!important;
+   }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+    opacity: 0.5!important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: rgb(42, 153, 57)!important;
+}
+
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+    color: red!important;
+    opacity: 0.8!important;
+}
+
+::ng-deep .mat-form-field-label {
+    color:rgb(70, 70, 70)!important;
+
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: red!important;
+}
+
+::ng-deep .mat-input-element {
+    caret-color: rgb(70, 70, 70)!important;
+}
+
+.header{
+    text-align: center;
+}
+
+.full-width{
+    width: 60%;
+}
+
+.email-input{
+    padding-top: 10px;
+}
+
+.aLink{
+    float: right;
+    padding-right: 23%;
+    text-decoration: none;
+}
+
+.btn-login{
+    margin: 10px 5px 5px 5px;
+    width: 30%;
+}
+
+.btn-login-main{
+    margin: 30px 30px 0 30px;
+    width: 62%;
+}
